@@ -9,7 +9,7 @@ public class Doctor {
 
     private Connection connection;
 
-    private Doctor(Connection connection) {
+    public Doctor(Connection connection) {
         this.connection = connection;
     }
 
@@ -26,12 +26,12 @@ public class Doctor {
             {
                 int id = resultSet.getInt("ID");
                 String name = resultSet.getString("Name");
-                String Specialization = resultSet.getString("Specialization");
+                String specialization = resultSet.getString("Specialization");
 
                 System.out.println("-----------------------------------------------------------");
                 System.out.println("ID : " + id);
                 System.out.println("Name : " + name);
-                System.out.println("Specialization : " + Specialization);
+                System.out.println("Specialization : " + specialization);
                 System.out.println("-----------------------------------------------------------");
             }
 
@@ -63,4 +63,5 @@ public class Doctor {
         }
         return false;
     }
+
 }

@@ -11,22 +11,22 @@ public class Patient {
     private Connection connection;
     private Scanner scanner;
 
-    private  Patient(Connection connection , Scanner scanner) {
+    public  Patient(Connection connection , Scanner scanner) {
         this.connection = connection;
         this.scanner = scanner;
     }
 
     public void addPatient(){
-        System.out.println("Enter Name : ");
+        System.out.print("Enter Name : ");
         String name = scanner.next();
-        System.out.println("Enter Age : ");
+        System.out.print("Enter Age : ");
         int age = scanner.nextInt();
-        System.out.println("Enter Gender : ");
+        System.out.print("Enter Gender : ");
         String gender = scanner.next();
 
 
         try{
-            String query = "INSERT INTO patients(Name,Age,Gender) VALUES (?,?,?)";
+            String query = "INSERT INTO patients(Name,Age,Gender) VALUES (?,?,?);";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
             preparedStatement.setString(1,name);
